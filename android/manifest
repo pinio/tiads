@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: armeabi armeabi-v7a x86
+description: ninja.ygor.tiads
+author: Ygor Lemos
+license: MIT
+copyright: Ygor Lemos
+
+# these should not be edited
+name: tiads
+moduleid: ninja.ygor.tiads
+guid: 0c092039-ebfa-43fb-a74e-0a0e9c776d1a
+platform: android
+minsdk: 5.5.1.GA

@@ -1,0 +1,1 @@
+rm -rf dist/*; ant clean; ant; unzip dist/ninja.ygor.tiads-android-1.0.0.zip; rm -rf ../../TiAdsTest/modules/android/ninja.ygor.tiads; mv modules/android/ninja.ygor.tiads ../../TiAdsTest/modules/android/
