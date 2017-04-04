@@ -61,7 +61,12 @@ Be aware that this requires the GooglePlayServices to be installed on the user's
 *getAdvertisingIdInfo* (String)
 
 > This method returns Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
-> Due to the nature of Android AdvertisingIdClient implementation, the methods for fetching the ID cannot be called from the main thread and should be called on a separate AsyncTask. This sometimes causes a delay for reading the parameter as it must be called from a Google Play Services API (and probably makes some network connections behind). That said, the method will return the string: **processing** if the AsyncTask haven't returned yet.
+> May return **processing** if the AsyncTask haven't returned with the advertising id yet.
+
+#### Android Notes:
+
+If you get a google-play-services-base.jar conflict with other modules like ti.map, try removing the jar from one of the modules in order to solve it.
+Due to the nature of Android AdvertisingIdClient implementation, the methods for fetching the ID cannot be called from the main thread and should be called on a separate AsyncTask. This sometimes causes a delay for reading the parameter as it must be called from a Google Play Services API (and probably makes some network connections behind). That said, the method will return the string: **processing** if the AsyncTask haven't returned yet.
 
 #### Android References:
 
