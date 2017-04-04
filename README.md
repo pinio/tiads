@@ -1,7 +1,5 @@
 # TiAds Module
 
-## ATTENTION: This is the first version of the alpha module. We need to make it better before releasing it Open Source.
-
 ### Compatibility
 
 Tested for Compatibility with:
@@ -42,8 +40,6 @@ For iOS we have mapped 3 main methods, one that verifies if the AdvertisingID is
 > https://developer.apple.com/reference/uikit/uidevice/1620059-identifierforvendor
 >
 
-
-
 #### iOS References:
 
 * https://developer.apple.com/reference/adsupport/asidentifiermanager
@@ -74,7 +70,7 @@ Due to the nature of Android AdvertisingIdClient implementation, the methods for
 * http://stackoverflow.com/questions/25846108/how-to-get-advertising-id-in-android
 * http://stackoverflow.com/questions/27961634/advertisingidclient-getadvertisingidinfo-blocked-by-main-thread
 
-### Todo:
+### TODO:
 
 * iOS - Add option for synchronizing the identifierForVendor to the user keychain so it never resets on app uninstalls
 * Android - Emit an event when the parameter is ready to be read (after AsyncTask has returned on onPostExecute)
