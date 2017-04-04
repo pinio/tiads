@@ -18,7 +18,7 @@ Implementation details for each platform are described below:
 
 For iOS we have mapped 3 main methods, one that verifies if the AdvertisingID is allowed to be read by your app and the other two for returning both the advertisingId itself and the vendorId.
 
-#### iOS Methods:
+#### iOS Attributes:
 
 *isAdvertisingTrackingEnabled* (Boolean)
 
