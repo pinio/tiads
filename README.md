@@ -53,6 +53,9 @@ For iOS we have mapped 3 main methods, one that verifies if the AdvertisingID is
 
 ### Android
 
+On Android we mapped the method getAdvertisingIdInfo from the AdvertisingIdClient API available as part of the Google Play Services.
+Be aware that this requires the GooglePlayServices to be installed on the user's device in order to work properly and this also requires the GooglePlayServices base jar and the ads jar (both included on the android/lib). I have tried my best to use a version of those JARs that doesn't conflict with other modules like ti.map but JAR hell might happen.
+
 #### Android Methods:
 
 *getAdvertisingIdInfo* (String)
