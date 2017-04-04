@@ -23,11 +23,11 @@ For iOS we have mapped 3 main methods, one that verifies if the AdvertisingID is
 *isAdvertisingTrackingEnabled* (Boolean)
 
 > Returns a boolean indicating if the user has allowed the advertisingId to be tracked. According to Apple Guidelines this must always be respected and verified before calling the advertisingIdentifier method for retrieving it.
-> Always calls this before calling the *advertisingIdentifier* method.
+> Always calls this before calling the **advertisingIdentifier** method.
 
 *advertisingIdentifier* (String)
 
-> Returns Apple's advertisingIdentifier according to the official iOS Docs: (advertisingIdentifier)[https://developer.apple.com/reference/adsupport/asidentifiermanager/1614151-advertisingidentifier?language=objc]
+> Returns Apple's advertisingIdentifier according to the official iOS Docs: [advertisingIdentifier](https://developer.apple.com/reference/adsupport/asidentifiermanager/1614151-advertisingidentifier?language=objc)
 >  In iOS 10.0 and later, the value of advertising​Identifier is all zeroes when the user has limited ad tracking.
 
 *identifierForVendor* (String)
@@ -37,7 +37,7 @@ For iOS we have mapped 3 main methods, one that verifies if the AdvertisingID is
 >  On iOS 6, the first two components of the bundle ID are used to generate the vendor ID. if the bundle ID only has a single component, then the entire bundle ID is used.
 >  On IOS 7, all components of the bundle except for the last component are used to generate the vendor ID. If the bundle ID only has a single component, then the entire bundle ID is used.
 >
-> When implementing a system for serving advertisements, use the value in the advertising​Identifier property of the ASIdentifier​Manager class instead of this property. Use of that property requires you to follow the guidelines set forth in the class discussion for the proper use of that identifier. For more information, see ASIdentifier​Manager.
+> When implementing a system for serving advertisements, use the value in the advertisingIdentifier property of the ASIdentifierManager class instead of this property. Use of that property requires you to follow the guidelines set forth in the class discussion for the proper use of that identifier. For more information, see ASIdentifierManager.
 >
 > https://developer.apple.com/reference/uikit/uidevice/1620059-identifierforvendor
 >
@@ -57,8 +57,8 @@ For iOS we have mapped 3 main methods, one that verifies if the AdvertisingID is
 
 *getAdvertisingIdInfo* (String)
 
-> This method returns Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the (AdvertisingIdClient API)[https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient]
-> Due to the nature of Android AdvertisingIdClient implementation, the methods for fetching the ID cannot be called from the main thread and should be called on a separate AsyncTask. This sometimes causes a delay for reading the parameter as it must be called from a Google Play Services API (and probably makes some network connections behind). That said, the method will return the string: *processing* if the AsyncTask haven't returned yet.
+> This method returns Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
+> Due to the nature of Android AdvertisingIdClient implementation, the methods for fetching the ID cannot be called from the main thread and should be called on a separate AsyncTask. This sometimes causes a delay for reading the parameter as it must be called from a Google Play Services API (and probably makes some network connections behind). That said, the method will return the string: **processing** if the AsyncTask haven't returned yet.
 
 #### Android References:
 
