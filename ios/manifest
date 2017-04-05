@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0.0
+version: 1.0.1
 apiversion: 2
 architectures: armv7 arm64 i386 x86_64
 description: ninja.ygor.tiads
@@ -15,4 +15,4 @@ name: ninja.ygor.tiads
 moduleid: ninja.ygor.tiads
 guid: 0c092039-ebfa-43fb-a74e-0a0e9c776d1a
 platform: iphone
-minsdk: 5.5.1.GA
+minsdk: 6.0.3
