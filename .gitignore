@@ -18,6 +18,7 @@ build.properties
 xcuserdata
 *.xcuserstate
 *.xcuserdata*
+ios/*.zip
 
 .idea/
 libs/
