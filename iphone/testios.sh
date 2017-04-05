@@ -1,1 +1,0 @@
-rm -rf modules; ti build -p ios --build-only; unzip ninja.ygor.tiads-iphone-1.0.0.zip; rm -rf ../../TiAdsTest/modules/iphone/ninja.ygor.tiads; mv modules/iphone/ninja.ygor.tiads ../../TiAdsTest/modules/iphone/

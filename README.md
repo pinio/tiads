@@ -3,8 +3,9 @@
 ### Compatibility
 
 Tested for Compatibility with:
-* Ti SDK 5.5.1.GA
 * Ti SDK 6.0.3.GA
+
+Althought we've managed to build the module to work on Ti SDK 5.x, it causes so many conflicts with other jars in the Android version that made us simply give up making it work. It works fine for iOS on Ti 5 and you're welcome to download the source and build it for Ti 5. (See #1)
 
 ### Abstract
 
