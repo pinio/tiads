@@ -60,6 +60,18 @@ Be aware that this requires the GooglePlayServices to be installed on the user's
 > This method returns Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
 > May return **processing** if the AsyncTask haven't returned with the advertising id yet.
 
+*isLimitAdTrackingEnabled* (Boolean)
+
+> Returns a boolean indicating if the user has allowed to be tracked using Advertising IDs on Android. This is similar to iOS  isAdvertisingTrackingEnabled and should be respected according to Google Play Privacy Guidelines.
+
+*getAndroidID* (String)
+
+> Returns the **ANDROID_ID** of the user device from Android SDK Settings.Secure.
+> A 64-bit number (as a hex string) that is randomly generated when the user first sets up the device and should remain constant for the lifetime of the user's device.
+> This can be used as an equivalent to iOS identifierForVendor on Android although it is not reseted on every installation.
+> ANDROID_ID seems a good choice for a unique device identifier.
+> There are downsides: First, it is not 100% reliable on releases of Android prior to 2.2 (“Froyo”). Also, there has been at least one widely-observed bug in a popular handset from a major manufacturer, where every instance has the same ANDROID_ID. According to https://android-developers.googleblog.com/2011/03/identifying-app-installations.html
+
 #### Android Notes:
 
 If you get a google-play-services-base.jar conflict with other modules like ti.map, try removing the jar from one of the modules in order to solve it.
@@ -71,8 +83,28 @@ Due to the nature of Android AdvertisingIdClient implementation, the methods for
 * http://stackoverflow.com/questions/25846108/how-to-get-advertising-id-in-android
 * http://stackoverflow.com/questions/27961634/advertisingidclient-getadvertisingidinfo-blocked-by-main-thread
 
-### TODO:
+### Usage
 
-* iOS - Add option for synchronizing the identifierForVendor to the user keychain so it never resets on app uninstalls
-* Android - Emit an event when the parameter is ready to be read (after AsyncTask has returned on onPostExecute)
+Follow the example on example/app.js. There you can find all methods used on the sample app.
 
+### Building the Module
+
+For **iOS**:
+
+cd on the ios directory and run:
+
+> ti build -p ios --build-only
+
+the module zip will be generated at the root directory.
+
+For **Android**:
+
+cd on the android directory and run:
+
+> ant
+
+the module zip will be on the dist folder.
+
+PR's are more than welcome.
+
+Issues can be reported on this repository Issues.
