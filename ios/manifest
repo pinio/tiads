@@ -3,7 +3,7 @@
 # during compilation, packaging, distribution, etc.
 #
 version: 1.2.0
-apiversion: 3
+apiversion: 2
 architectures: armv7 arm64 i386 x86_64
 description: ninja.ygor.tiads
 author: Ygor Lemos
