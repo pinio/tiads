@@ -2,9 +2,12 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.2.0
-apiversion: 3
-architectures: armeabi x86 armeabi-v7a x86_64
+# Note: After sdk 7.x, android modules are built using 'appc run -p android --build-only' instead of 'ant'
+#
+
+version: 3.0.0
+apiversion: 4
+architectures: arm64-v8a armeabi-v7a x86
 description: ninja.ygor.tiads
 author: Ygor Lemos
 license: MIT
@@ -15,4 +18,4 @@ name: tiads
 moduleid: ninja.ygor.tiads
 guid: 0c092039-ebfa-43fb-a74e-0a0e9c776d1a
 platform: android
-minsdk: 6.2.0
+minsdk: 7.0.0
