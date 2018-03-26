@@ -21,6 +21,7 @@ xcuserdata
 ios/*.zip
 
 .idea/
+.vscode/
 libs/
 
 android/clean
