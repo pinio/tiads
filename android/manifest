@@ -5,7 +5,7 @@
 # Note: After sdk 7.x, android modules are built using 'appc run -p android --build-only' instead of 'ant'
 #
 
-version: 3.0.0
+version: 4.0.0
 apiversion: 4
 architectures: arm64-v8a armeabi-v7a x86
 description: ninja.ygor.tiads

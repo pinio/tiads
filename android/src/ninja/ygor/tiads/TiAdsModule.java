@@ -10,13 +10,11 @@ import org.appcelerator.kroll.common.TiConfig;
 
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
-import com.google.android.gms.common.ConnectionResult;
+//import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import java.io.IOException;
-
-import android.provider.Settings.Secure;
+//import com.google.android.gms.common.GooglePlayServicesUtil;
+//import java.io.IOException;
 
 import android.os.AsyncTask;
 
@@ -80,11 +78,6 @@ public class TiAdsModule extends KrollModule {
     public boolean isLimitAdTrackingEnabled() {
         new AdvertisingIdTask().execute();
         return adidLimit;
-    }
-    
-    @Kroll.getProperty @Kroll.method
-    public String getAndroidID() {
-        return Secure.getString(TiApplication.getInstance().getApplicationContext().getContentResolver(), Secure.ANDROID_ID);
     }
 
 }

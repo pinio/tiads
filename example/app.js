@@ -44,41 +44,6 @@ if (Ti.Platform.osname == "android") {
 
     
     
-} else {
-    var lblADID = Ti.UI.createLabel({
-        text: "advertisingIdentifier",
-        top: 40
-    });
-
-    w.add(lblADID);
-
-    lblADID.addEventListener("click", function() {
-        var idfa = tiads.advertisingIdentifier;
-        lblADID.setText("advertisingIdentifier: " + idfa);
-    });
-
-    var lblATE = Ti.UI.createLabel({
-        text: "isAdvertisingTrackingEnabled"
-    });
-
-    w.add(lblATE);
-
-    lblATE.addEventListener("click", function() {
-        var iidfa = tiads.isAdvertisingTrackingEnabled;
-        lblATE.setText("isAdvertisingTrackingEnabled: " + iidfa);
-    })
-
-    var lblIFV = Ti.UI.createLabel({
-        text: "identifierForVendor"
-    });
-
-    w.add(lblIFV);
-
-    lblIFV.addEventListener("click", function() {
-        var idfv = tiads.identifierForVendor;
-        lblIFV.setText("identifierForVendor: " + idfv);
-    })
-    
 }
 
 
