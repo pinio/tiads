@@ -79,19 +79,11 @@ Follow the example on example/app.js. There you can find all methods used on the
 
 ### Building the Module
 
-For **iOS**:
-
-cd on the ios directory and run:
-
-> ti build -p ios --build-only
-
-the module zip will be generated at the root directory.
-
 For **Android**:
 
 cd on the android directory and run:
 
-> ant
+> appc run -p android --build-only
 
 the module zip will be on the dist folder.
 
