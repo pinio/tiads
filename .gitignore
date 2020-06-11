@@ -28,6 +28,7 @@ android/clean
 android/ant_clean
 android/.classpath
 android/.settings
+android/.gradle
 android/dist/
 android/launch-*
 nbproject
