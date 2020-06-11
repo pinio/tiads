@@ -41,7 +41,7 @@ I have deprecated the _getAndroidID_ method since the same info can be fetched u
 
 #### Android Methods:
 
-_getAdvertisingIdInfo_ (String)
+_getAdvertisingIdInfo_ (String) - [Automatic Getters are deprecated, use the property to access the ID]
 
 > This method returns the Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
 > May return **processing** if the AsyncTask haven't returned with the advertising id yet.
@@ -55,6 +55,13 @@ _isLimitAdTrackingEnabled_ (Boolean)
 > This can be used as an equivalent to iOS identifierForVendor on Android although it is not reseted on every installation.
 > ANDROID_ID seems a good choice for a unique device identifier.
 > There are downsides: First, it is not 100% reliable on releases of Android prior to 2.2 (“Froyo”). Also, there has been at least one widely-observed bug in a popular handset from a major manufacturer, where every instance has the same ANDROID_ID. According to https://android-developers.googleblog.com/2011/03/identifying-app-installations.html
+
+### Android Properties:
+
+_advertisingIdInfo_
+
+> This property returns the Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
+> May return **processing** if the AsyncTask haven't returned with the advertising id yet.
 
 #### Android Notes:
 
