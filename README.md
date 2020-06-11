@@ -3,7 +3,8 @@
 ### Compatibility
 
 Tested for Compatibility with:
-* Ti SDK 8.1.1.GA
+
+-   Ti SDK 9.0.3.GA
 
 Althought we've managed to build the module to work on Ti SDK 5.x, it causes so many conflicts with other jars in the Android version that made us simply give up making it work. It works fine for iOS on Ti 5 and you're welcome to download the source and build it for Ti 5. (See issues#1)
 
@@ -17,13 +18,13 @@ Implementation details for each platform are described below:
 
 **DEPRECATED!!!**
 
-For iOS, the current Titanium SDK GA (8.1.1.GA) already provides access to the Ads Identifiers therefore this module is not required anymore in order to access those parameters.
+For iOS, the Titanium SDK GA (8.1.1.GA and up) already provides access to the Ads Identifiers therefore this module is not required anymore in order to access those parameters.
 
 You can use the following accessors on the latest versions of Titanium:
 
-- Ti.Platform.identifierForVendor
-- Ti.Platform.identifierForAdvertising
--Ti.Platform.isAdvertisingTrackingEnabled
+-   Ti.Platform.identifierForVendor
+-   Ti.Platform.identifierForAdvertising
+-   Ti.Platform.isAdvertisingTrackingEnabled
 
 Please refer to official Ti Documentation for more info.
 
@@ -32,27 +33,26 @@ Please refer to official Ti Documentation for more info.
 On Android we mapped the method getAdvertisingIdInfo from the AdvertisingIdClient API available as part of the Google Play Services.
 Be aware that this requires the GooglePlayServices to be installed on the user's device in order to work properly and this also requires the GooglePlayServices base jar and the ads jar (both included on the android/lib). I have tried my best to use a version of those JARs that doesn't conflict with other modules like ti.map but JAR hell might happen.
 
-> The module is still needed on Android as of Ti 8.1.1.GA since I couldn't find a clean way to use AsyncTask with Hyperloop since we need to access the AdvertisingIdClient out of the main thread. Thus this module is still required for Android
+> The module is still needed on Android as of Ti 9.0.3.GA since I couldn't find a clean way to use AsyncTask with Hyperloop as we need to access the AdvertisingIdClient out of the main thread. Thus this module is still required for Android until either we get a way to run AsyncTasks on hyperloop or the advertising IDs has parity for Android on core itself.
 
 #### Deprecations
 
-I have deprecated the *getAndroidID* method since the same info can be fetched using Ti.Platform.id on current Titanium versions.
+I have deprecated the _getAndroidID_ method since the same info can be fetched using Ti.Platform.id on current Titanium versions.
 
 #### Android Methods:
 
-*getAdvertisingIdInfo* (String)
+_getAdvertisingIdInfo_ (String)
 
 > This method returns Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
 > May return **processing** if the AsyncTask haven't returned with the advertising id yet.
 
-*isLimitAdTrackingEnabled* (Boolean)
+_isLimitAdTrackingEnabled_ (Boolean)
 
-> Returns a boolean indicating if the user has allowed to be tracked using Advertising IDs on Android. This is similar to iOS  isAdvertisingTrackingEnabled and should be respected according to Google Play Privacy Guidelines.
+> Returns a boolean indicating if the user has allowed to be tracked using Advertising IDs on Android. This is similar to iOS isAdvertisingTrackingEnabled and should be respected according to Google Play Privacy Guidelines.
 
-*getAndroidID* (String)
+_getAndroidID_ (String)
 
-*DEPRECATED* - Use Ti.Platform.id directly.
-
+_DEPRECATED_ - Use Ti.Platform.id directly.
 
 > Returns the **ANDROID_ID** of the user device from Android SDK Settings.Secure.
 > A 64-bit number (as a hex string) that is randomly generated when the user first sets up the device and should remain constant for the lifetime of the user's device.
@@ -69,9 +69,9 @@ Due to the nature of Android AdvertisingIdClient implementation, the methods for
 
 #### Android References:
 
-* https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient
-* http://stackoverflow.com/questions/25846108/how-to-get-advertising-id-in-android
-* http://stackoverflow.com/questions/27961634/advertisingidclient-getadvertisingidinfo-blocked-by-main-thread
+-   https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient
+-   http://stackoverflow.com/questions/25846108/how-to-get-advertising-id-in-android
+-   http://stackoverflow.com/questions/27961634/advertisingidclient-getadvertisingidinfo-blocked-by-main-thread
 
 ### Usage
 
@@ -83,7 +83,7 @@ For **Android**:
 
 cd on the android directory and run:
 
-> appc run -p android --build-only
+> titanium build -p android --build-only
 
 the module zip will be on the dist folder.
 
