@@ -35,10 +35,6 @@ Be aware that this requires the GooglePlayServices to be installed on the user's
 
 > The module is still needed on Android as of Ti 9.0.3.GA since I couldn't find a clean way to use AsyncTask with Hyperloop as we need to access the AdvertisingIdClient out of the main thread. Thus this module is still required for Android until either we get a way to run AsyncTasks on hyperloop or the advertising IDs has parity for Android on core itself.
 
-#### Deprecations
-
-I have deprecated the _getAndroidID_ method since the same info can be fetched using Ti.Platform.id on current Titanium versions.
-
 #### Android Methods:
 
 _getAdvertisingIdInfo_ (String) - [Automatic Getters are deprecated, use the property to access the ID]
@@ -56,7 +52,7 @@ _isLimitAdTrackingEnabled_ (Boolean)
 > ANDROID_ID seems a good choice for a unique device identifier.
 > There are downsides: First, it is not 100% reliable on releases of Android prior to 2.2 (“Froyo”). Also, there has been at least one widely-observed bug in a popular handset from a major manufacturer, where every instance has the same ANDROID_ID. According to https://android-developers.googleblog.com/2011/03/identifying-app-installations.html
 
-### Android Properties:
+#### Android Properties:
 
 _advertisingIdInfo_
 
@@ -65,9 +61,6 @@ _advertisingIdInfo_
 
 #### Android Notes:
 
-> Google Play Services JAR Hell should not happen anymore since Appcelerator greatly improved this area with the introduction of ti.playservices.
-
-If you get a google-play-services-base.jar conflict with other modules like ti.map, try removing the jar from one of the modules in order to solve it.
 Due to the nature of Android AdvertisingIdClient implementation, the methods for fetching the ID cannot be called from the main thread and should be called on a separate AsyncTask. This sometimes causes a delay for reading the parameter as it must be called from a Google Play Services API (and probably makes some network connections behind). That said, the method will return the string: **processing** if the AsyncTask haven't returned yet.
 
 #### Android References:
@@ -91,6 +84,6 @@ cd on the android directory and run:
 
 the module zip will be on the dist folder.
 
-PR's are more than welcome.
+### PR's are more than welcome.
 
-Issues can be reported on this repository Issues.
+### Issues can be reported on this repository Issues.
