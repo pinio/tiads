@@ -18,4 +18,4 @@ name: tiads
 moduleid: ninja.ygor.tiads
 guid: 0c092039-ebfa-43fb-a74e-0a0e9c776d1a
 platform: android
-minsdk: 7.0.0
+minsdk: 9.0.0
