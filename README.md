@@ -43,16 +43,12 @@ I have deprecated the _getAndroidID_ method since the same info can be fetched u
 
 _getAdvertisingIdInfo_ (String)
 
-> This method returns Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
+> This method returns the Android AdvertisingId from AdvertisingIdClient.getAdvertisingIdInfo native method. This follows the [AdvertisingIdClient API](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient)
 > May return **processing** if the AsyncTask haven't returned with the advertising id yet.
 
 _isLimitAdTrackingEnabled_ (Boolean)
 
 > Returns a boolean indicating if the user has allowed to be tracked using Advertising IDs on Android. This is similar to iOS isAdvertisingTrackingEnabled and should be respected according to Google Play Privacy Guidelines.
-
-_getAndroidID_ (String)
-
-_DEPRECATED_ - Use Ti.Platform.id directly.
 
 > Returns the **ANDROID_ID** of the user device from Android SDK Settings.Secure.
 > A 64-bit number (as a hex string) that is randomly generated when the user first sets up the device and should remain constant for the lifetime of the user's device.
@@ -76,6 +72,7 @@ Due to the nature of Android AdvertisingIdClient implementation, the methods for
 ### Usage
 
 Follow the example on example/app.js. There you can find all methods used on the sample app.
+You may need to run a timed loop to check it until Android AsyncTask returns the ID.
 
 ### Building the Module
 
